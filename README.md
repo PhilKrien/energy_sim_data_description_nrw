@@ -41,5 +41,12 @@ License: DL-DE->Zero-2.0
 ### Electricity demand
 
 
+1 person housholds: Jährlicher Stromverbrauch eines 1-Personen-Haushalts in Deutschland nach Gebäudetyp im Jahr 2025 (in Kilowattstunden) [Graph], co2online, 13. Mai, 2025. [Online]. Verfügbar: https://de.statista.com/statistik/daten/studie/558239/umfrage/stromverbrauch-einen-1-personen-haushalts-in-deutschland/
 
+2 person households: Jährlicher Stromverbrauch eines 2-Personen-Haushalts in Deutschland nach Gebäudetyp im Jahr 2025 (in Kilowattstunden) [Graph], co2online, 13. Mai, 2025. [Online]. Verfügbar: https://de.statista.com/statistik/daten/studie/558277/umfrage/stromverbrauch-einen-2-personen-haushalts-in-deutschland/
 
+3 person households: Jährlicher Stromverbrauch eines 3-Personen-Haushalts in Deutschland nach Gebäudetyp im Jahr 2025 (in Kilowattstunden) [Graph], co2online, 13. Mai, 2025. [Online]. Verfügbar: https://de.statista.com/statistik/daten/studie/558280/umfrage/stromverbrauch-einen-3-personen-haushalts-in-deutschland/
+
+4 person households: Jährlicher Stromverbrauch eines 4-Personen-Haushalts in Deutschland nach Gebäudetyp im Jahr 2023 (in Kilowattstunden) [Graph], co2online, 4. April, 2023. [Online]. Verfügbar: https://de.statista.com/statistik/daten/studie/558288/umfrage/stromverbrauch-einen-4-personen-haushalts-in-deutschland/
+
+5 person households: Jährlicher Stromverbrauch eines 5-Personen-Haushalts in Deutschland nach Gebäudetyp im Jahr 2025 (in Kilowattstunden) [Graph], co2online, 13. Mai, 2025. [Online]. Verfügbar: https://de.statista.com/statistik/daten/studie/558295/umfrage/stromverbrauch-einen-5-personen-haushalts-in-deutschland/
