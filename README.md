@@ -1,6 +1,30 @@
-# futurebeeing_energy_sim_data_description
-Description of the resources and calculations used to create the NRW dataset for the simulations in the energy menu card of the FutureBeeing tool in Phase 1 on a building level.
+# FutureBeeing Energy Simulation Data – NRW Building Stock
 
+## About
+
+**Project:** FutureBeeing – Phase 1, Energy Menu Card  
+**Institution:** FH Münster, Labor für Energiesystemmodellierung  
+**Author:** Philippe Krienelke  
+**Contact:** philippe.krienelke@fh-muenster.de  
+**Date:** 03.06.2026  
+**Version:** 1.0.0  
+
+## Description
+
+This repository documents the data sources, assumptions, and calculation
+methods used to generate the NRW building-level dataset for the energy
+simulation component of the FutureBeeing tool. The dataset covers all
+residential buildings in NRW and provides annual estimates for heat demand,
+electricity demand, and PV potential at the building level. The resulting data set will be published to the Open Energy Platform (OEP).
+
+## Scope and Intended Use
+
+- **Geographic scope:** North Rhine-Westphalia (NRW), Germany
+- **Building type:** Residential buildings only
+- **Spatial resolution:** Individual building level (point geometry)
+- **Intended aggregation level:** District or municipal level
+- **Not suitable for:** Individual building-level decision making
+  
 This table offers an overview of the parameters, that are saved in the database
 | Column               | Type          | Nullable | Description                                                              |
 |----------------------|---------------|----------|--------------------------------------------------------------------------|
@@ -233,4 +257,81 @@ for the corresponding TABULA type, rounded to the nearest integer.
   variation within NRW.
 - Buildings with `avg_inhabitants > 5` are clipped to 5-person consumption.
 - The scope of the FutureBeeing tool is on a quarter level analysis, not on building sharp decision making.
+
+### Heating Technology
+
+**Source:** Zensus 2022 – Statistisches Bundesamt
+URL: https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Zensus2022/_inhalt.html
+License: DL-DE->Zero-2.0
+
+The `heat_technology` attribute is assigned heuristically based on the
+heating system distribution reported in the Zensus 2022 dataset. The census
+provides the number of installed heating systems per technology for 100 m ×
+100 m raster cells. These shares are used to assign a heating technology to
+each individual building within the corresponding raster cell.
+
+#### Assignment Heuristic
+
+The share of each technology within a raster cell is calculated and
+translated into a number of buildings to be assigned that technology:
+
+$$n_{\text{tech}} = \left\lfloor s_{\text{tech}} \cdot N_{\text{buildings}} \right\rfloor$$
+
+where $s_{\text{tech}}$ is the share of a technology in the raster cell and
+$N_{\text{buildings}}$ is the total number of buildings in the cell.
+
+Technologies are assigned in the following priority order, each with a
+building-type preference:
+
+| Technology       | Preferred building type | Rationale |
+|------------------|------------------------|-----------|
+| `hp`             | SFH, TH first          | Heat pumps are more common in smaller buildings with outdoor space |
+| `district_heat`  | MFH, AB first          | District heating is economically favored for large consumers |
+| `elec`           | SFH, TH first          | Electric heating more common in smaller buildings |
+| `oil`            | SFH, TH first          | Oil heating predominantly found in older detached buildings |
+| `biomass`        | SFH, TH first          | Biomass heating typical for rural single-family buildings |
+| `gas`            | remainder              | Default technology for all unassigned buildings |
+
+Within MFH/AB, buildings are sorted by total heat demand descending before
+assignment — larger, older buildings are assigned less efficient technologies
+first.
+
+If no technology data is available for a raster cell, all buildings in that
+cell are assigned `gas` as a default.
+
+#### Heuristic Validation
+
+To verify that the assignment heuristics are empirically supported by the
+underlying Zensus data, the dominant heating technology per raster cell was
+determined from the raw Zensus 2022 counts (`idxmax` over absolute technology
+counts). For each dominant technology, the mean and median share of MFH/AB
+and SFH/TH buildings within the corresponding raster cells was calculated.
+
+The table below summarizes the findings:
+
+| Technology       | n cells | Mean MFH share | Mean SFH share | Median MFH share | Confirmed |
+|------------------|--------:|:--------------:|:--------------:|:----------------:|:---------:|
+| `district_heat`  |  20,824 |      0.550     |      0.450     |      0.714       | ✅        |
+| `elec`           |   6,233 |      0.226     |      0.774     |      0.000       | ✅        |
+| `gas`            | 342,373 |      0.225     |      0.775     |      0.000       | ✅        |
+| `biomass`        |     169 |      0.165     |      0.835     |      0.000       | ✅        |
+| `oil`            |  81,038 |      0.066     |      0.934     |      0.000       | ✅        |
+| `hp`             |   8,933 |      0.054     |      0.946     |      0.000       | ✅        |
+
+The results confirm the assumed preferences: cells dominated by district
+heating show the highest MFH/AB share (mean 55 %, median 71 %), while cells
+dominated by heat pumps and oil heating are strongly SFH/TH-dominated
+(~94 % and ~93 % respectively).
+
+#### Limitations
+
+- Heating technologies are assigned at the raster cell level, not at the
+  individual building level — within a cell, the assignment is heuristic.
+- The Zensus data reflects the building stock as of 2022 and does not
+  capture subsequent technology changes (e.g. heat pump installations).
+- The preference rules (e.g. heat pumps → SFH/TH) reflect statistical
+  tendencies and will not be accurate for every individual building.
+- Due to integer rounding of technology counts, a small share of buildings
+  is always assigned gas regardless of the actual gas share in the cell.
+
 
