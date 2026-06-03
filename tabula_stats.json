@@ -1,0 +1,239 @@
+{
+  "tabula_stats": [
+    {
+      "tabula_key": "DE.N.AB.02",
+      "avg_dwelling_size_m2": 63,
+      "avg_inhabitants": 1
+    },
+    {
+      "tabula_key": "DE.N.AB.03",
+      "avg_dwelling_size_m2": 88,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.AB.04",
+      "avg_dwelling_size_m2": 69,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.AB.05",
+      "avg_dwelling_size_m2": 69,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.AB.06",
+      "avg_dwelling_size_m2": 69,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.AB.07",
+      "avg_dwelling_size_m2": 70,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.AB.08",
+      "avg_dwelling_size_m2": 64,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.AB.09",
+      "avg_dwelling_size_m2": 69,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.AB.10",
+      "avg_dwelling_size_m2": 68,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.AB.11",
+      "avg_dwelling_size_m2": 58,
+      "avg_inhabitants": 1
+    },
+    {
+      "tabula_key": "DE.N.AB.12",
+      "avg_dwelling_size_m2": 62,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.01",
+      "avg_dwelling_size_m2": 80,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.02",
+      "avg_dwelling_size_m2": 82,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.03",
+      "avg_dwelling_size_m2": 73,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.04",
+      "avg_dwelling_size_m2": 74,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.05",
+      "avg_dwelling_size_m2": 74,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.06",
+      "avg_dwelling_size_m2": 74,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.07",
+      "avg_dwelling_size_m2": 79,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.08",
+      "avg_dwelling_size_m2": 78,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.09",
+      "avg_dwelling_size_m2": 79,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.10",
+      "avg_dwelling_size_m2": 84,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.11",
+      "avg_dwelling_size_m2": 76,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.MFH.12",
+      "avg_dwelling_size_m2": 77,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.01",
+      "avg_dwelling_size_m2": 118,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.02",
+      "avg_dwelling_size_m2": 119,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.03",
+      "avg_dwelling_size_m2": 116,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.04",
+      "avg_dwelling_size_m2": 123,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.05",
+      "avg_dwelling_size_m2": 123,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.06",
+      "avg_dwelling_size_m2": 123,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.07",
+      "avg_dwelling_size_m2": 128,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.08",
+      "avg_dwelling_size_m2": 127,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.09",
+      "avg_dwelling_size_m2": 129,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.SFH.10",
+      "avg_dwelling_size_m2": 135,
+      "avg_inhabitants": 3
+    },
+    {
+      "tabula_key": "DE.N.SFH.11",
+      "avg_dwelling_size_m2": 142,
+      "avg_inhabitants": 3
+    },
+    {
+      "tabula_key": "DE.N.SFH.12",
+      "avg_dwelling_size_m2": 141,
+      "avg_inhabitants": 3
+    },
+    {
+      "tabula_key": "DE.N.TH.01",
+      "avg_dwelling_size_m2": 99,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.TH.02",
+      "avg_dwelling_size_m2": 100,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.TH.03",
+      "avg_dwelling_size_m2": 99,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.TH.04",
+      "avg_dwelling_size_m2": 107,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.TH.05",
+      "avg_dwelling_size_m2": 107,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.TH.06",
+      "avg_dwelling_size_m2": 107,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.TH.07",
+      "avg_dwelling_size_m2": 117,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.TH.08",
+      "avg_dwelling_size_m2": 117,
+      "avg_inhabitants": 2
+    },
+    {
+      "tabula_key": "DE.N.TH.09",
+      "avg_dwelling_size_m2": 121,
+      "avg_inhabitants": 3
+    },
+    {
+      "tabula_key": "DE.N.TH.10",
+      "avg_dwelling_size_m2": 124,
+      "avg_inhabitants": 3
+    },
+    {
+      "tabula_key": "DE.N.TH.11",
+      "avg_dwelling_size_m2": 116,
+      "avg_inhabitants": 3
+    },
+    {
+      "tabula_key": "DE.N.TH.12",
+      "avg_dwelling_size_m2": 114,
+      "avg_inhabitants": 3
+    }
+  ]
+}
