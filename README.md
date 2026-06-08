@@ -1,8 +1,7 @@
-# FutureBeeing Energy Simulation Data – NRW Building Stock
+# Energy Simulation Data – NRW Building Stock
 
 ## About
 
-**Project:** FutureBeeing – Phase 1, Energy Menu Card  
 **Institution:** FH Münster, Labor für Energiesystemmodellierung  
 **Author:** Philippe Krienelke  
 **Contact:** philippe.krienelke@fh-muenster.de  
@@ -12,8 +11,7 @@
 ## Description
 
 This repository documents the data sources, assumptions, and calculation
-methods used to generate the NRW building-level dataset for the energy
-simulation component of the FutureBeeing tool. The dataset covers all
+methods used to generate the NRW building-level dataset. The dataset covers all
 residential buildings in NRW and provides annual estimates for heat demand,
 electricity demand, and PV potential at the building level. The resulting data set will be published to the Open Energy Platform (OEP).
 
@@ -28,19 +26,19 @@ electricity demand, and PV potential at the building level. The resulting data s
 This table offers an overview of the parameters, that are saved in the database
 | Column               | Type          | Nullable | Description                                                              |
 |----------------------|---------------|----------|--------------------------------------------------------------------------|
-| `id`                 | `bigserial`   | ❌       | Incrementally generated ID (primary key)                                 |
-| `size_class`         | `varchar(18)` | ✅       | Size class of the building (ETHOS DB)                                    |
-| `tabula_key`         | `varchar(18)` | ✅       | TABULA type of the building (ETHOS DB)                                   |
-| `construction_year`  | `integer`     | ✅       | Construction year (ETHOS DB)                                             |
-| `refurbishment_state`| `integer`     | ✅       | Refurbishment state 1–3 (ETHOS DB)                                       |
-| `living_area`        | `float`       | ✅       | Conditioned living area Al [m2]                                          |
-| `heat_demand_1`      | `float`       | ✅       | Annual heat demand at refurbishment state 1 [kWh/a]                      |
-| `heat_demand_2`      | `float`       | ✅       | Annual heat demand at refurbishment state 2 [kWh/a]                      |
-| `heat_demand_3`      | `float`       | ✅       | Annual heat demand at refurbishment state 3 [kWh/a]                      |
-| `elec_demand`        | `float`       | ✅       | Annual electricity demand [kWh/a]                                        |
-| `pv_potential`       | `float`       | ✅       | Annual PV potential if all roof areas used [kWh/a]                       |
-| `heat_technology`    | `varchar(18)` | ✅       | Heating system (Zensus 2020, statistical/heuristic)                      |
-| `geometry`           | `geometry`    | ✅       | Point location of the building                                           |
+| `id`                 | `bigserial`   |   no     | Incrementally generated ID (primary key)                                 |
+| `size_class`         | `varchar(18)` |   yes    | Size class of the building (ETHOS DB)                                    |
+| `tabula_key`         | `varchar(18)` |   yes    | TABULA type of the building (ETHOS DB)                                   |
+| `construction_year`  | `integer`     |   yes    | Construction year (ETHOS DB)                                             |
+| `refurbishment_state`| `integer`     |   yes    | Refurbishment state 1–3 (ETHOS DB)                                       |
+| `living_area`        | `float`       |   yes    | Conditioned living area Al [m2]                                          |
+| `heat_demand_1`      | `float`       |   yes    | Annual heat demand at refurbishment state 1 [kWh/a]                      |
+| `heat_demand_2`      | `float`       |   yes    | Annual heat demand at refurbishment state 2 [kWh/a]                      |
+| `heat_demand_3`      | `float`       |   yes    | Annual heat demand at refurbishment state 3 [kWh/a]                      |
+| `elec_demand`        | `float`       |   yes    | Annual electricity demand [kWh/a]                                        |
+| `pv_potential`       | `float`       |   yes    | Annual PV potential if all roof areas used [kWh/a]                       |
+| `heat_technology`    | `varchar(18)` |   yes    | Heating system (Zensus 2020, statistical/heuristic)                      |
+| `geometry`           | `geometry`    |   yes    | Point location of the building                                           |
 
 ### Tabula type, refurbishment state and height
 
@@ -166,9 +164,6 @@ where $d_{\text{heat}}$ and $d_{\text{dhw}}$ are looked up from
   are not available in the building stock data.
 
 
-
-
-
 ### PV potential
 URL: https://www.opengeodata.nrw.de/produkte/umwelt_klima/energie/solarkataster/photovoltaik/
 License: DL-DE->Zero-2.0
@@ -209,8 +204,7 @@ For MFH and AB, the number of dwellings is estimated by dividing the total
 living area $A_{living}$ by the average dwelling size for the corresponding 
 TABULA type:
 
-$$N_{dw} = \left\lfloor \frac{A_{living}}{\bar{A}_{tabula}} \right\rceil, 
-\quad N_{dw} \geq 1$$
+$$N_{dw} = \max\left(2,\, \left\lfloor \frac{A_{living}}{\bar{A}_{tabula}} \right\rceil\right)$$
 
 where $\lfloor \cdot \rceil$ denotes rounding to the nearest integer.
 
@@ -311,12 +305,12 @@ The table below summarizes the findings:
 
 | Technology       | n cells | Mean MFH share | Mean SFH share | Median MFH share | Confirmed |
 |------------------|--------:|:--------------:|:--------------:|:----------------:|:---------:|
-| `district_heat`  |  20,824 |      0.550     |      0.450     |      0.714       | ✅        |
-| `elec`           |   6,233 |      0.226     |      0.774     |      0.000       | ✅        |
-| `gas`            | 342,373 |      0.225     |      0.775     |      0.000       | ✅        |
-| `biomass`        |     169 |      0.165     |      0.835     |      0.000       | ✅        |
-| `oil`            |  81,038 |      0.066     |      0.934     |      0.000       | ✅        |
-| `hp`             |   8,933 |      0.054     |      0.946     |      0.000       | ✅        |
+| `district_heat`  |  20,824 |      0.550     |      0.450     |      0.714       | yes       |
+| `elec`           |   6,233 |      0.226     |      0.774     |      0.000       | yes       |
+| `gas`            | 342,373 |      0.225     |      0.775     |      0.000       | yes       |
+| `biomass`        |     169 |      0.165     |      0.835     |      0.000       | yes       |
+| `oil`            |  81,038 |      0.066     |      0.934     |      0.000       | yes       |
+| `hp`             |   8,933 |      0.054     |      0.946     |      0.000       | yes       |
 
 The results confirm the assumed preferences: cells dominated by district
 heating show the highest MFH/AB share (mean 55 %, median 71 %), while cells
