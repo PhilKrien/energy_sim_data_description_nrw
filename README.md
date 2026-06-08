@@ -27,7 +27,7 @@ This table offers an overview of the parameters, that are saved in the database
 | Column               | Type          | Nullable | Description                                                              |
 |----------------------|---------------|----------|--------------------------------------------------------------------------|
 | `id`                 | `bigserial`   |   no     | Incrementally generated ID (primary key)                                 |
-| `size_class`         | `varchar(18)` |   yes    | Size class of the building (ETHOS DB)                                    |
+| `size_class`         | `varchar(18)` |   no    | Size class of the building (ETHOS DB)                                    |
 | `tabula_key`         | `varchar(18)` |   no    | TABULA type of the building (ETHOS DB)                                   |
 | `construction_year`  | `integer`     |   yes    | Construction year (ETHOS DB)                                             |
 | `refurbishment_state`| `integer`     |   yes    | Refurbishment state 1–3 (ETHOS DB)                                       |
