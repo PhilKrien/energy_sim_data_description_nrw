@@ -28,7 +28,7 @@ This table offers an overview of the parameters, that are saved in the database
 |----------------------|---------------|----------|--------------------------------------------------------------------------|
 | `id`                 | `bigserial`   |   no     | Incrementally generated ID (primary key)                                 |
 | `size_class`         | `varchar(18)` |   yes    | Size class of the building (ETHOS DB)                                    |
-| `tabula_key`         | `varchar(18)` |   yes    | TABULA type of the building (ETHOS DB)                                   |
+| `tabula_key`         | `varchar(18)` |   no    | TABULA type of the building (ETHOS DB)                                   |
 | `construction_year`  | `integer`     |   yes    | Construction year (ETHOS DB)                                             |
 | `refurbishment_state`| `integer`     |   yes    | Refurbishment state 1–3 (ETHOS DB)                                       |
 | `living_area`        | `float`       |   yes    | Conditioned living area Al [m2]                                          |
@@ -37,8 +37,8 @@ This table offers an overview of the parameters, that are saved in the database
 | `heat_demand_3`      | `float`       |   yes    | Annual heat demand at refurbishment state 3 [kWh/a]                      |
 | `elec_demand`        | `float`       |   yes    | Annual electricity demand [kWh/a]                                        |
 | `pv_potential`       | `float`       |   yes    | Annual PV potential if all roof areas used [kWh/a]                       |
-| `heat_technology`    | `varchar(18)` |   yes    | Heating system (Zensus 2020, statistical/heuristic)                      |
-| `geometry`           | `geometry`    |   yes    | Point location of the building                                           |
+| `heat_technology`    | `varchar(18)` |   no   | Heating system (Zensus 2020, statistical/heuristic)                      |
+| `geometry`           | `geometry`    |   no    | Point location of the building                                           |
 
 ### Tabula type, refurbishment state and height
 
